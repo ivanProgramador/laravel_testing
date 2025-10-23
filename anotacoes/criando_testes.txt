@@ -1,0 +1,88 @@
+O laravel possui uma comando padrão para criação de testes, mas é importante lembrar 
+que se eu não disser que tipoi de teste eu quero criar ele vai criar uma teste de features
+e não um teste unitario por isso eu coloquei a diretiva " --unit " no final do comando.
+No caso por questões de convenção todos os testes criados devem conter no final do nome 
+o nome "Test".   
+
+   php artisan make:test MeuPrimeiroTest --unit
+
+Esse comando vai criar um aquivo de testes unitário dentro da pasta tests/Unit dentro dele tem 
+------------------------------------------------------------------------
+<?php
+
+test('example', function () {
+    expect(true)->toBeTrue();
+});
+------------------------------------------------------------------------
+
+Executando os testes
+
+  php artisan test 
+
+A resposta do terminal vai ser essa abaixo me informando se deu certo a execução 
+da função de testes o nome da função ,quantos testes ele achou e quanto tempo durou 
+a analise, por padrão esse teste dá certo porque ele foi criado como um exemplo
+pelo próprio framework. 
+
+--------------------------------------------------------------
+   PASS  Tests\Unit\MeuPrimeiroTest
+  ✓ example                                                                                                                              2.21s  
+
+  Tests:    1 passed (1 assertions)
+  Duration: 12.89s
+----------------------------------------------------
+
+Entendendo um teste 
+ Na ufnção abaixo ela tem o expect() que espera que 
+ seja oque for o valor que esteja dentro do expect() seja verdadeiro 
+ eu estabeleci uma variável "$a = true" se ela e verdadeira como a função 
+ " toBeTrue() " espera a execução vai dar certo. 
+
+
+  test('example', function () {
+
+    $a =true;
+    
+    expect($a)->toBeTrue();
+  });
+
+Fazendo o teste falhar 
+
+ test('example', function () {
+
+    $a =false;
+    
+    expect($a)->toBeTrue();
+  });
+
+retorno ele mostra a linha que deu erro e foi exatamente a linha que retornou falso quando 
+deveria ser verdadeiro   no restante dos dados ele mostra o tempo de analise e quajtso testes ele analisou 
+
+--------------------------------------------------------------------------------
+
+   FAIL  Tests\Unit\MeuPrimeiroTest
+  ⨯ example                                                                                                                              1.11s  
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Unit\MeuPrimeiroTest > example
+  Failed asserting that false is true.
+
+  at tests\Unit\MeuPrimeiroTest.php:7 
+      4▕
+      5▕     $a =false;
+      6▕
+  ➜   7▕     expect($a)->toBeTrue();
+      8▕ });
+      9▕
+
+  1   tests\Unit\MeuPrimeiroTest.php:7
+
+
+  Tests:    1 failed (1 assertions)
+  Duration: 1.44s
+-------------------------------------------------------------------------------------------------
+
+
+
+
+
+
