@@ -1,0 +1,22 @@
+TESTES 
+
+Os testes de codigo são necessários para evitar retrabalho após o lançamento do software em produção,
+nenhum sistema é totalmente a prova de falhas, no entanto a ideia de testes de codigo, pode diminuir 
+bastante demandas de refatoração e correção de codigo em um cenário pós-implantação.
+
+Testes Unitários
+
+  Permitem testar pequenas unidades de código, por exemplo um metodo, uma função e visam testar,
+  se uma parte inidividual esta funcionando de forma correta, isolando uma unidade de codigo.
+  por exemplo:testar se uma função matematica retorna o valor correto para diferentes calculos.
+
+Testes funcionais 
+
+  Permitem testar funcionalidades do sistema como um todo, testando se o sistema esta funcionando 
+  de acordo com os requisitos do usuário, basicamente simulam o comportamento do usuario testando 
+  fluxos completos.
+  por exemplo testar se a função de autenticação esta funcionando  de forma correta, se ela estiver 
+  ja s sdabe qua todos os mini serviçoes e funcções dentro dela estão normais.          
+   
+
+
