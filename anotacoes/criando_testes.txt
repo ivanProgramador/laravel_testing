@@ -33,10 +33,10 @@ pelo próprio framework.
 ----------------------------------------------------
 
 Entendendo um teste 
- Na ufnção abaixo ela tem o expect() que espera que 
- seja oque for o valor que esteja dentro do expect() seja verdadeiro 
- eu estabeleci uma variável "$a = true" se ela e verdadeira como a função 
- " toBeTrue() " espera a execução vai dar certo. 
+ Na função abaixo ela tem o expect() que espera que  seja qual for o valor 
+ que esteja dentro do expect() seja verdadeiro eu estabeleci uma variável 
+ "$a = true" se ela e verdadeira como a função " toBeTrue() " espera a execução 
+ vai dar certo. 
 
 
   test('example', function () {
@@ -55,8 +55,9 @@ Fazendo o teste falhar
     expect($a)->toBeTrue();
   });
 
-retorno ele mostra a linha que deu erro e foi exatamente a linha que retornou falso quando 
-deveria ser verdadeiro   no restante dos dados ele mostra o tempo de analise e quajtso testes ele analisou 
+no retorno ele mostra a linha que deu erro e foi exatamente a linha que retornou falso quando 
+deveria ser verdadeiro   no restante dos dados ele mostra o tempo de analise e quantos
+testes ele analisou 
 
 --------------------------------------------------------------------------------
 
@@ -81,7 +82,35 @@ deveria ser verdadeiro   no restante dos dados ele mostra o tempo de analise e q
   Duration: 1.44s
 -------------------------------------------------------------------------------------------------
 
+executando somente os testes unitarios
 
+   php artisan test --testsuite=Unit 
+
+Como o sistema sabe que com esse comndo eu quero executar apenas testes unitarios 
+  Na raiz do projeto existe um xml com o nome de phpunit.xml dentro dele eu tenho uma tag 
+  chamada "<testsuites> </testsuites> " ela tem uma tag oparar cada suite de teste no exemplo 
+  abaixo ela tem 2 Uma e a unit e a outra e a Feature então quando eu cionao esse comando
+  "php artisan test --testsuite=Unit" estou apontando pra uma delas que apontam para as pastas,
+  editando eleas eu posso colçocar os testes onde for necessário.      
+
+  <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+  </testsuites>
+
+Executando um teste especifico
+
+    php artisan test --testsuite=Unit --filter=MeuPrimeiroTest 
+
+
+  
+
+
+  
 
 
 

@@ -1,8 +1,13 @@
 <?php
 
 test('example', function () {
+    
+    //primeira versão 
+   // $a =true;
 
-    $a =false;
+    //segunda versão
+    
+    $a = false; 
 
     expect($a)->toBeTrue();
 });
