@@ -8,7 +8,7 @@ use App\Http\Controllers\MainController;
 // 1 - a descrção do teste explicando oque esta sendo testado
 // 2 - uma closure que vai executar o teste de fato 
 
-test('testendo o metodo index do controller', function(){
+test('testando o metodo index do controller', function(){
 
     //criando uma instacia do Maincontroller
     $mainController = new MainController();

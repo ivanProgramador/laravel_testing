@@ -1,0 +1,38 @@
+Nesse contexto eu vou simular que eu tenho uma classe com alguns metodos estaticos,
+qua podem ser acionado eplos metododo controller quando necessário, então eu vou testar 
+os memtodos desses serviços pra evr se eles estão fazendo sua funções de forma correta.  
+
+No caso quando eu aciono a rota um fluxo se inicia 
+
+1 - a rota ciona o controller 
+2 - o controller aciona o metodo 
+3 - o metodo aciona a classe 
+4 - a classe ciona o metodo interno dela generateHash() 
+5 - esse metodo retorna a hash 
+
+fazendo isso pela rota o hash gerado é mostrado na tela 
+
+
+
+Já no teste eu não preciso chamar a rota so preciso cehmar a classe 
+e testar o retorno do metodo  
+
+
+-------------------------------------------------------------------------------------
+<?php
+
+use App\Services\MainOperations;
+
+test('testar se esta sendo gerada uma hash',function(){
+
+    
+    $hash = MainOperations::generateHash(); 
+    
+
+    //testando se relamente existem 32 caracteres vindo desse serviço
+     
+    expect(strlen($hash))->toBe(32);
+
+     
+});
+---------------------------------------------------------------------------
