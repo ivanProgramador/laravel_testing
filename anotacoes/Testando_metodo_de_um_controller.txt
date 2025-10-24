@@ -1,0 +1,58 @@
+No caso eu fiz uma teste unitário onde eu verifico se um dos metodos do Maincontroller
+retorna uma string e s essa string é "Olá mundo".
+
+Aqui é o controller que será testado, ele so possui o metodo index 
+
+------------------------------------------------------------------------------
+
+class MainController extends Controller
+{
+    public function index(){
+        return "Olá mundo";
+    }
+}
+----------------------------------------------------------------------------
+
+O teste unitario que vai testar esse controller, embora seja um controller eu não preciso 
+de uma rota parar testar ele porque o controller é uma classe, se eu quiser acessar um metodo 
+basta criar uma instancia, como eu fiz abaixo.
+
+No codigo abaixo eu testeo 2 coisas 
+ 
+ 1 - se o index retorna um string
+ 2 - se essa string é "Olá mundo"
+
+O resultado positivo dos dois vai me retornar 2 assertions  
+mostrando que posso ter um teste que faz varios mini testes dentro dele 
+
+----------------------------------------------------------------------------------
+
+//trazendo o main controller para dentro do arquivo de testes 
+
+use App\Http\Controllers\MainController;
+
+//O metodo test recebe dois párarametros 
+// 1 - a descrção do teste explicando oque esta sendo testado
+// 2 - uma closure que vai executar o teste de fato 
+
+test('testendo o metodo index do controller', function(){
+
+    //criando uma instacia do Maincontroller
+    $mainController = new MainController();
+
+    //chamando o metdo index que eu quero testar 
+
+    $result = $mainController->index();
+
+    //testando se o index retorna uma string 
+
+    expect($result)->toBeString();
+
+    //testando tambem se a string que veio foi "Olá mundo"
+
+    expect($result)->toEqual("Olá mundo");
+
+
+});
+---------------------------------------------------------------------------------------
+

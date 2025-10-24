@@ -3,3 +3,7 @@ composer require pestphp/pest --dev --with-all-dependencies
  ./vendor/bin/pest --init
 ./vendor/bin/pest
 php artisan make:test MeuPrimeiroTest --unit
+php artisan make:controller MainController
+php artisan make:test MainControllerTest --unit
+
+ 
