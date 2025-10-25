@@ -16,7 +16,10 @@ Testes funcionais
   de acordo com os requisitos do usuário, basicamente simulam o comportamento do usuario testando 
   fluxos completos.
   por exemplo testar se a função de autenticação esta funcionando  de forma correta, se ela estiver 
-  ja se sabe que todos os mini serviços e funções dentro dela estão normais.          
+  ja se sabe que todos os mini serviços e funções dentro dela estão normais.
+
+  ATENÇÃO: a palavra Test no final de acada aruivo de teste seja ele unitario ou não é obrigatória,
+  caso contrario o framework de testes não irá reconhecer o arquivo como um arquivo de teste.          
    
 
 

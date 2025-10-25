@@ -7,4 +7,10 @@ php artisan make:controller MainController
 php artisan make:test MainControllerTest --unit
 php artisan make:test MainOperationsGenerateTestHash --unit
 
+rodando um teste especifico 
+ php artisan test --filter=MainOperationsGenerateHashTest
+rodando todos os testes 
+  php artisan test 
+
+
  
