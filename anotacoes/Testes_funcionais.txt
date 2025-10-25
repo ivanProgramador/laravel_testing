@@ -1,0 +1,82 @@
+
+TESTES FUNCIONAIS 
+
+São testes mais abrangentes onde ao inves de testar o retorno de uma função,
+eu faço o teste de rotas, subimissão de formularios, ou seja eu tessto de fato um 
+conjunto de funções que compoem uma funcionalidade do sistema dai vem o nome teste funcional.
+
+
+TESTANDO UMA VIEW 
+  Quando a rota raiz do laravel é ecionada ela faz a sequencia 
+  
+
+    1 -  http://localhost/laravel_testing/public/
+
+    2 -  Route::get('/', function () {
+         return view('welcome');
+         });
+
+
+    3 - "welcome.blade.php"
+
+  Quando eu faço essa sequencia eu recebo um retorno 200 qua significa que está tudo ok 
+  eu requisitei e recebi oque eu pedi para o servidor.
+
+TESTENDO SE É ISSO MESMO 
+
+  para fazer isso eu vou criar uma codigo de teste pra view
+
+  php artisan make:test HomePageTest
+
+  esse comando vai gerar esse codigo dentro da pasta fetures
+
+  OBSERVAÇÃO: 
+
+     No codigo existe a diretiva "$this" mesmo sem que eu tenha declarado nenhuma classe,
+     isso acontece porque estamos dentro do framework laravel e internamente ele tem acesso 
+     a qualquer classe,metodo ou atributo nisso quando eu falei que queria testar a HomePage
+     dele, ele foi buscar a classe da rota e la ele pegou o atributo get onde a rota aponta pra
+     raiz. 
+
+
+    Nesse codigo ele vai testar se o status retornado é 200,
+    se for significa que a rota esta funcionando normalmente  
+
+    test('verificar se a welcome page esta disponivel', function () {
+    
+       $response = $this->get('/');
+
+       $response->assertStatus(200);
+    });
+
+
+FAZENDO O TESTE FALHAR
+
+   Para fazer o teste falhar eu so preciso ir no codigo da rota e 
+   apontar a função de retorno parar uma view que não existe ai 
+   ele retorna um codigo diferente de 200 ele não vai achar o recurso 
+   então vai retornar 404 causando a falha do meu teste  
+
+    Route::get('/', function () {
+         return view('welcomeX');
+    });
+
+   ATENÇÃO:
+     Os testes de rota do laravel funcionan mesmo com o servidor desligado,
+     porque como oque está sendo testado e a funcionalidade o comando abaixo cria 
+     um servidor de teste isolado pra conter a rota que vai ser requisitada, então
+     rota é requisitada, ela responde e depois o servidor temporário é desligado
+
+
+     php artisan test --filter=HomePageTest
+
+
+
+
+
+
+
+ 
+
+
+
