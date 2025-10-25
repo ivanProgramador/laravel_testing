@@ -19,7 +19,33 @@ Testes funcionais
   ja se sabe que todos os mini serviços e funções dentro dela estão normais.
 
   ATENÇÃO: a palavra Test no final de acada aruivo de teste seja ele unitario ou não é obrigatória,
-  caso contrario o framework de testes não irá reconhecer o arquivo como um arquivo de teste.          
+  caso contrario o framework de testes não irá reconhecer o arquivo como um arquivo de teste.    
+
+
+  PEST PHP 
+   O pest é um framework voltado parar testes que permite usar funções pre-definidas com o inteuito de 
+   facilitar a escrita de testes mais rapida e intuitiva.
+   O PEST possui 
+
+     descritores de teste 
+
+        São funções que permite descrever o teste de forma clara e objetiva, como por exemplo:
+        test() -> define um teste unitario
+        it() -> define um teste funcional
+        describe() -> agrupa testes relacionados
+
+     Expectativas
+
+        São fuções que permitem definir o comportamento esperado do código testado, como por exemplo:
+        expect() -> define uma expectativa para um valor
+        toBe() -> verifica se o valor é igual a outro valor
+        toThrow() -> verifica se uma exceção é lançada      
+
+      hooks de teste 
+
+        São funções que permitem executar código antes ou depois de cada teste, como por exemplo:
+        beforeEach() -> executa códgo antes de cada teste
+        afterEach() -> executa código depois de cada teste         
    
 
 
