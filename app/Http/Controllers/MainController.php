@@ -22,6 +22,9 @@ class MainController extends Controller
        echo"<p> parametro da rota : ". MainOperations::generateHash($numchars) ."</p>";
 
     }
+
+  
+
 }
 
 
