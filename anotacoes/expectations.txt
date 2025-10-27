@@ -1,0 +1,113 @@
+As expectations são um conagunto de funções presentes dentro do PEST que servem 
+para analisar resultados algumas delas são:
+
+toBe()
+toBeArray()
+toBeBetween()
+toBeEmpty()
+toBeTrue()
+toBeTruthy()
+toBeFalse()
+toBeFalsy()
+toBeGreaterThan()
+toBeGreaterThanOrEqual()
+toBeLessThan()
+toBeLessThanOrEqual()
+toContain()
+toContainEqual()
+toContainOnlyInstancesOf()
+toHaveCount()
+toHaveProperty()
+toHaveProperties()
+toMatchArray()
+toMatchObject()
+toEqual()
+toEqualCanonicalizing()
+toEqualWithDelta()
+toBeIn()
+toBeInfinite()
+toBeInstanceOf()
+toBeBool()
+toBeCallable()
+toBeFile()
+toBeFloat()
+toBeInt()
+toBeIterable()
+toBeNumeric()
+toBeDigits()
+toBeObject()
+toBeResource()
+toBeScalar()
+toBeString()
+toBeJson()
+toBeNan()
+toBeNull()
+toHaveKey()
+toHaveKeys()
+toHaveLength()
+toBeReadableDirectory()
+toBeReadableFile()
+toBeWritableDirectory()
+toBeWritableFile()
+toStartWith()
+toThrow()
+toEndWith()
+toMatch()
+toMatchConstraint()
+toBeUppercase()
+toBeLowercase()
+toBeAlpha()
+toBeAlphaNumeric()
+toBeSnakeCase()
+toBeKebabCase()
+toBeCamelCase()
+toBeStudlyCase()
+toHaveSnakeCaseKeys()
+toHaveKebabCaseKeys()
+toHaveCamelCaseKeys()
+toHaveStudlyCaseKeys()
+toHaveSameSize()
+toBeUrl()
+toBeUuid()
+
+A ideia dessas funções é analisar os resultados obtidos dos testes da foma mais detalhada e  
+passar o reultador da forma mais precisa possivel.Essas funcções tambem podem ser associadas 
+a mais metodos que extendem a capacidade de diagnostico delas. Abaixo tem alguns exemplos. 
+
+and()
+dd()
+ddWhen()
+ddUnless()
+each()
+json()
+match()
+not
+ray()
+sequence()
+unless()
+when()
+
+usando uma funções com extenção 
+
+1 - expect($result)->toEqual("Olá mundo");
+2 - expect(true)->toBeTrue();
+
+usando duas expectations encadeadas 
+
+describe('Testando expectation api', function () {
+    it('Testeando um função ', function () {
+         
+        $valor = 10; 
+
+        //aqui eu vou testar duas coisas 
+        //1 - se o valor é igual a 10
+        //2 - se o valor é inteiro 
+
+        expect($valor)->toBeInt()->toBe(10);
+
+
+    });
+
+
+
+
