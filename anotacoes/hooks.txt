@@ -1,0 +1,2 @@
+São funcções feitas para executar entes de cada teste e depois de cada teste esse tipo de função
+pode ser usada para testes de ambiente ou limpeza de ambiante antes de iniciar um projeto.  
